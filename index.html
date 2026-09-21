@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cute Cat Clock 🐱⏰</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- =========================
+             CUTE RETRO CLOCK
+        ========================== -->
+
+        <section class="clock" id="clock">
+
+            <!-- Antennae -->
+            <div class="antenna antenna-left">
+                <span class="antenna-ball"></span>
+            </div>
+
+            <div class="antenna antenna-right">
+                <span class="antenna-ball"></span>
+            </div>
+
+
+            <!-- Top label -->
+            <div class="clock-header">
+
+                <div class="theme-label" id="themeLabel">
+                    Breakfast Time ☕
+                </div>
+
+                <span class="heart">♥</span>
+
+            </div>
+
+
+            <!-- Main clock area -->
+            <div class="clock-content">
+
+                <!-- Cat -->
+                <div class="cat-container">
+
+                    <img
+                        id="cat"
+                        class="cat"
+                        src="assets/cats/breakfast.png"
+                        alt="Cute cat"
+                    >
+
+                </div>
+
+
+                <!-- Oval digital display -->
+                <div class="digital-screen">
+
+                    <div class="time" id="time">
+                        08:00
+                    </div>
+
+                    <div class="ampm" id="ampm">
+                        AM
+                    </div>
+
+                </div>
+
+
+                <!-- Date -->
+                <div class="date" id="date">
+                    Tuesday, September 22
+                </div>
+
+            </div>
+
+
+            <!-- Little clock feet -->
+            <div class="clock-feet">
+
+                <div class="foot"></div>
+
+                <div class="foot"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Sound button -->
+        <button
+            class="sound-button"
+            id="soundButton"
+            type="button"
+        >
+            🔔 Sound ON
+        </button>
+
+
+        <!-- Theme change sound -->
+        <audio
+            id="themeSound"
+            preload="auto"
+        >
+            <source
+                src="assets/sounds/twing.mp3"
+                type="audio/mpeg"
+            >
+        </audio>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
