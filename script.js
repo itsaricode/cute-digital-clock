@@ -45,6 +45,8 @@ let currentTheme = null;
 
 const themes = {
 
+    /* ☕ BREAKFAST */
+
     breakfast: {
 
         name: "Breakfast Time ☕",
@@ -64,6 +66,8 @@ const themes = {
             9 * 60 + 29
     },
 
+
+    /* 🧹 CLEANING */
 
     cleaning: {
 
@@ -85,6 +89,8 @@ const themes = {
     },
 
 
+    /* 📚 STUDY */
+
     study: {
 
         name: "Study Time 📚",
@@ -104,6 +110,8 @@ const themes = {
             15 * 60 + 59
     },
 
+
+    /* 📺 TV */
 
     tv: {
 
@@ -125,6 +133,8 @@ const themes = {
     },
 
 
+    /* 🍽️ DINNER */
+
     dinner: {
 
         name: "Dinner Time 🍽️",
@@ -145,6 +155,8 @@ const themes = {
     },
 
 
+    /* 🌙 SLEEPY */
+
     sleepy: {
 
         name: "Sleepy Time 🌙",
@@ -164,6 +176,8 @@ const themes = {
             23 * 60 + 59
     },
 
+
+    /* 🌙 AFTER MIDNIGHT */
 
     night: {
 
@@ -186,8 +200,9 @@ const themes = {
 
 };
 
+
 /* =========================================
-   FIND THEME FROM TIME
+   FIND THEME FROM CURRENT TIME
 ========================================= */
 
 function getTheme(hour, minute) {
@@ -207,16 +222,24 @@ function getTheme(hour, minute) {
         ) {
 
             return {
+
                 key: key,
+
                 ...theme
+
             };
         }
     }
 
 
+    /* Fallback */
+
     return {
+
         key: "night",
+
         ...themes.night
+
     };
 }
 
@@ -227,23 +250,35 @@ function getTheme(hour, minute) {
 
 function playThemeSound() {
 
+    /* Sound OFF? Stop here. */
+
     if (!soundEnabled) {
 
         return;
     }
 
 
+    /* Start sound from beginning */
+
     themeSound.currentTime = 0;
 
+
+    /*
+       Play the cute TWINNG sound.
+
+       Some browsers block automatic
+       audio until the user interacts
+       with the page, so we safely catch
+       that situation.
+    */
 
     themeSound
         .play()
         .catch(() => {
 
-            /*
-              Browser can block sound
-              until user interacts with page.
-            */
+            console.log(
+                "Sound will play after user interaction."
+            );
 
         });
 }
@@ -258,19 +293,46 @@ function changeTheme(
     playSound = false
 ) {
 
-    /* Change clock colour */
+
+    /* =====================================
+       CHANGE CLOCK THEME CLASS
+    ===================================== */
 
     clock.className =
         `clock ${theme.className}`;
 
 
-    /* Change label */
+    /* =====================================
+       CHANGE CANVA BACKGROUND
+    ===================================== */
+
+    clock.style.backgroundImage =
+        `url("${theme.background}")`;
+
+
+    clock.style.backgroundSize =
+        "cover";
+
+
+    clock.style.backgroundPosition =
+        "center";
+
+
+    clock.style.backgroundRepeat =
+        "no-repeat";
+
+
+    /* =====================================
+       CHANGE THEME LABEL
+    ===================================== */
 
     themeLabel.textContent =
         theme.name;
 
 
-    /* Restart entrance animation */
+    /* =====================================
+       RESTART CAT ANIMATION
+    ===================================== */
 
     cat.classList.remove(
         "cat-enter"
@@ -278,27 +340,33 @@ function changeTheme(
 
 
     /*
-      Force browser to notice that
-      animation is starting again.
+       Force browser to restart
+       the animation.
     */
 
     void cat.offsetWidth;
 
 
-    /* Change cat */
+    /* =====================================
+       CHANGE CAT IMAGE
+    ===================================== */
 
     cat.src =
         theme.cat;
 
 
-    /* Play entrance animation */
+    /* =====================================
+       START CAT ENTRANCE ANIMATION
+    ===================================== */
 
     cat.classList.add(
         "cat-enter"
     );
 
 
-    /* Play sound */
+    /* =====================================
+       PLAY TWINNG SOUND
+    ===================================== */
 
     if (playSound) {
 
@@ -313,23 +381,33 @@ function changeTheme(
 
 function updateClock() {
 
+    /* Get current date & time */
+
     const now =
         new Date();
 
+
+    /* Current hour in 24-hour format */
 
     const hour24 =
         now.getHours();
 
 
+    /* Current minute */
+
     const minute =
         now.getMinutes();
 
 
-    /* 24h → 12h */
+    /* =====================================
+       CONVERT 24H → 12H
+    ===================================== */
 
     let hour12 =
         hour24 % 12 || 12;
 
+
+    /* AM or PM */
 
     const ampm =
         hour24 >= 12
@@ -337,32 +415,42 @@ function updateClock() {
             : "AM";
 
 
-    /* Display time */
+    /* =====================================
+       DISPLAY TIME
+    ===================================== */
 
     timeElement.textContent =
         `${String(hour12).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
 
 
-    /* Display AM / PM */
+    /* =====================================
+       DISPLAY AM / PM
+    ===================================== */
 
     ampmElement.textContent =
         ampm;
 
 
-    /* Display date */
+    /* =====================================
+       DISPLAY DATE
+    ===================================== */
 
     dateElement.textContent =
         now.toLocaleDateString(
             "en-US",
             {
                 weekday: "long",
+
                 month: "long",
+
                 day: "numeric"
             }
         );
 
 
-    /* Find current theme */
+    /* =====================================
+       FIND CURRENT THEME
+    ===================================== */
 
     const theme =
         getTheme(
@@ -371,54 +459,84 @@ function updateClock() {
         );
 
 
-    /*
-      Only change theme when
-      the theme actually changes.
-    */
+    /* =====================================
+       ONLY CHANGE THEME WHEN NECESSARY
+    ===================================== */
 
     if (
         theme.key !== currentTheme
     ) {
 
+
+        /*
+           First page load should NOT
+           play TWINNG.
+
+           TWINNG should only happen
+           when the theme actually changes.
+        */
+
         const firstLoad =
             currentTheme === null;
 
+
+        /* Remember current theme */
 
         currentTheme =
             theme.key;
 
 
+        /* Apply theme */
+
         changeTheme(
+
             theme,
 
             !firstLoad
+
         );
     }
 }
 
 
 /* =========================================
-   SOUND ON / OFF
+   SOUND ON / OFF BUTTON
 ========================================= */
 
 soundButton.addEventListener(
     "click",
     () => {
 
+
+        /* Toggle sound */
+
         soundEnabled =
             !soundEnabled;
 
+
+        /* =================================
+           SOUND ON
+        ================================= */
 
         if (soundEnabled) {
 
             soundButton.textContent =
                 "🔔 Sound ON";
 
-        } else {
+        }
+
+
+        /* =================================
+           SOUND OFF
+        ================================= */
+
+        else {
 
             soundButton.textContent =
                 "🔇 Sound OFF";
+
         }
+
     }
 );
 
@@ -430,9 +548,9 @@ soundButton.addEventListener(
 updateClock();
 
 
-/*
-  Update every second.
-*/
+/* =========================================
+   UPDATE EVERY SECOND
+========================================= */
 
 setInterval(
     updateClock,
