@@ -48,13 +48,17 @@ const themes = {
     breakfast: {
 
         name: "Breakfast Time ☕",
-        background: "assets/backgrounds/breakfast.png",
+
         className: "theme-breakfast",
+
+        background:
+            "assets/backgrounds/breakfast.png",
 
         cat:
             "assets/cats/breakfast.png",
 
-        start: 6 * 60,
+        start:
+            6 * 60,
 
         end:
             9 * 60 + 29
@@ -66,6 +70,9 @@ const themes = {
         name: "Cleaning Time 🧹",
 
         className: "theme-cleaning",
+
+        background:
+            "assets/backgrounds/cleaning.png",
 
         cat:
             "assets/cats/cleaning.png",
@@ -84,6 +91,9 @@ const themes = {
 
         className: "theme-study",
 
+        background:
+            "assets/backgrounds/study.png",
+
         cat:
             "assets/cats/study.png",
 
@@ -100,6 +110,9 @@ const themes = {
         name: "TV Time 📺",
 
         className: "theme-tv",
+
+        background:
+            "assets/backgrounds/tv.png",
 
         cat:
             "assets/cats/tv.png",
@@ -118,6 +131,9 @@ const themes = {
 
         className: "theme-dinner",
 
+        background:
+            "assets/backgrounds/dinner.png",
+
         cat:
             "assets/cats/dinner.png",
 
@@ -134,6 +150,9 @@ const themes = {
         name: "Sleepy Time 🌙",
 
         className: "theme-sleepy",
+
+        background:
+            "assets/backgrounds/sleepy.png",
 
         cat:
             "assets/cats/sleepy.png",
@@ -152,16 +171,20 @@ const themes = {
 
         className: "theme-sleepy",
 
+        background:
+            "assets/backgrounds/sleepy.png",
+
         cat:
             "assets/cats/sleepy.png",
 
-        start: 0,
+        start:
+            0,
 
         end:
             5 * 60 + 59
     }
-};
 
+};
 
 /* =========================================
    FIND THEME FROM TIME
