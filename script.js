@@ -48,7 +48,7 @@ const themes = {
     breakfast: {
 
         name: "Breakfast Time ☕",
-
+        background: "assets/backgrounds/breakfast.png",
         className: "theme-breakfast",
 
         cat:
