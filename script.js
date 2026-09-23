@@ -60,10 +60,10 @@ const themes = {
             "assets/cats/breakfast.png",
 
         start:
-            12 * 60 + 0,
+            12 * 60 + 20,
 
         end:
-            12 * 60 + 0
+            12 * 60 + 20
     },
 
 
@@ -82,10 +82,10 @@ const themes = {
             "assets/cats/cleaning.png",
 
         start:
-            12 * 60 + 1,
+            12 * 60 + 22,
 
         end:
-            12 * 60 + 1
+            12 * 60 + 22
     },
 
 
@@ -104,10 +104,10 @@ const themes = {
             "assets/cats/study.png",
 
         start:
-            12 * 60 + 2,
+            12 * 60 + 23,
 
         end:
-            12 * 60 + 2
+            12 * 60 + 23
     },
 
 
@@ -126,10 +126,10 @@ const themes = {
             "assets/cats/tv.png",
 
         start:
-            12 * 60 + 3,
+            12 * 60 + 24,
 
         end:
-            12 * 60 + 3
+            12 * 60 + 24
     },
 
 
@@ -148,10 +148,10 @@ const themes = {
             "assets/cats/dinner.png",
 
         start:
-            12 * 60 + 4,
+            12 * 60 + 25,
 
         end:
-            12 * 60 + 4
+            12 * 60 + 25
     },
 
 
@@ -170,10 +170,10 @@ const themes = {
             "assets/cats/sleepy.png",
 
         start:
-            12 * 60 + 5,
+            12 * 60 + 26,
 
         end:
-            12 * 60 + 5
+            12 * 60 + 26
     },
 
 
@@ -192,10 +192,10 @@ const themes = {
             "assets/cats/sleepy.png",
 
         start:
-            12 * 60 + 6,
+            12 * 60 + 27,
 
         end:
-            12 * 60 + 6
+            12 * 60 + 27
     }
 
 };
