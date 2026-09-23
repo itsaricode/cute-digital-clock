@@ -40,17 +40,15 @@ let currentTheme = null;
 
 
 /* =========================================
-   OUR THEMES
+   🎬 VIDEO TEST — 30 SECONDS EACH
+   START: 8:45 PM
 ========================================= */
 
 const themes = {
 
-    /* ☕ BREAKFAST — 10:55 */
-
     breakfast: {
 
         name: "Breakfast Time ☕",
-
         className: "theme-breakfast",
 
         background:
@@ -59,20 +57,14 @@ const themes = {
         cat:
             "assets/cats/breakfast.png",
 
-        start:
-            7 * 60 + 31,
-
-        end:
-            7 * 60 + 31
+        start: 20 * 3600 + 45 * 60,
+        end:   20 * 3600 + 45 * 60 + 29
     },
 
-
-    /* 🧹 CLEANING — 10:56 */
 
     cleaning: {
 
         name: "Cleaning Time 🧹",
-
         className: "theme-cleaning",
 
         background:
@@ -81,20 +73,14 @@ const themes = {
         cat:
             "assets/cats/cleaning.png",
 
-        start:
-            7 * 60 + 32,
-
-        end:
-            7 * 60 + 32
+        start: 20 * 3600 + 45 * 60 + 30,
+        end:   20 * 3600 + 45 * 60 + 59
     },
 
-
-    /* 📚 STUDY — 10:57 */
 
     study: {
 
         name: "Study Time 📚",
-
         className: "theme-study",
 
         background:
@@ -103,20 +89,14 @@ const themes = {
         cat:
             "assets/cats/study.png",
 
-        start:
-            7 * 60 + 33,
-
-        end:
-            7 * 60 + 33
+        start: 20 * 3600 + 46 * 60,
+        end:   20 * 3600 + 46 * 60 + 29
     },
 
-
-    /* 📺 TV — 10:58 */
 
     tv: {
 
         name: "TV Time 📺",
-
         className: "theme-tv",
 
         background:
@@ -125,20 +105,14 @@ const themes = {
         cat:
             "assets/cats/tv.png",
 
-        start:
-            7 * 60 + 34,
-
-        end:
-            7 * 60 + 34
+        start: 20 * 3600 + 46 * 60 + 30,
+        end:   20 * 3600 + 46 * 60 + 59
     },
 
-
-    /* 🍽️ DINNER — 10:59 */
 
     dinner: {
 
         name: "Dinner Time 🍽️",
-
         className: "theme-dinner",
 
         background:
@@ -147,20 +121,14 @@ const themes = {
         cat:
             "assets/cats/dinner.png",
 
-        start:
-            7 * 60 + 35,
-
-        end:
-            7 * 60 + 35
+        start: 20 * 3600 + 47 * 60,
+        end:   20 * 3600 + 47 * 60 + 29
     },
 
-
-    /* 🌙 SLEEPY — 11:00 */
 
     sleepy: {
 
         name: "Sleepy Time 🌙",
-
         className: "theme-sleepy",
 
         background:
@@ -169,20 +137,14 @@ const themes = {
         cat:
             "assets/cats/sleepy.png",
 
-        start:
-            7 * 60 + 36,
-
-        end:
-            7 * 60 + 36
+        start: 20 * 3600 + 47 * 60 + 30,
+        end:   20 * 3600 + 47 * 60 + 59
     },
 
-
-    /* 🌙 DREAMY NIGHT — 11:01 */
 
     night: {
 
         name: "Dreamy Night 🌙",
-
         className: "theme-sleepy",
 
         background:
@@ -191,11 +153,8 @@ const themes = {
         cat:
             "assets/cats/sleepy.png",
 
-        start:
-            7 * 60 + 37,
-
-        end:
-            7 * 60 + 37
+        start: 20 * 3600 + 48 * 60,
+        end:   20 * 3600 + 48 * 60 + 29
     }
 
 };
