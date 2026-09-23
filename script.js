@@ -82,10 +82,10 @@ const themes = {
             "assets/cats/cleaning.png",
 
         start:
-            12 * 60 + 22,
+            12 * 60 + 21,
 
         end:
-            12 * 60 + 22
+            12 * 60 + 21
     },
 
 
