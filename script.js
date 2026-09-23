@@ -164,16 +164,16 @@ const themes = {
         className: "theme-sleepy",
 
         background:
-            "assets/backgrounds/sleepy.png",
+            "assets/backgrounds/late-night.png",
 
         cat:
             "assets/cats/sleepy.png",
 
         start:
-            10 * 60 + 0,
+            11 * 60 + 7,
 
         end:
-            10 * 60 + 0
+            11 * 60 + 7
     },
 
 
@@ -186,7 +186,7 @@ const themes = {
         className: "theme-sleepy",
 
         background:
-            "assets/backgrounds/sleepy.png",
+            "assets/backgrounds/late-night.png",
 
         cat:
             "assets/cats/sleepy.png",
