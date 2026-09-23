@@ -163,11 +163,12 @@ const themes = {
 /* =========================================
    FIND THEME FROM CURRENT TIME
 ========================================= */
+function getTheme(hour, minute, second) {
 
-function getTheme(hour, minute) {
-
-    const totalMinutes =
-        hour * 60 + minute;
+    const totalSeconds =
+        hour * 3600 +
+        minute * 60 +
+        second;
 
 
     for (
@@ -176,29 +177,21 @@ function getTheme(hour, minute) {
     ) {
 
         if (
-            totalMinutes >= theme.start &&
-            totalMinutes <= theme.end
+            totalSeconds >= theme.start &&
+            totalSeconds <= theme.end
         ) {
 
             return {
-
                 key: key,
-
                 ...theme
-
             };
         }
     }
 
 
-    /* Fallback */
-
     return {
-
         key: "night",
-
         ...themes.night
-
     };
 }
 
@@ -530,11 +523,12 @@ function updateClock() {
        FIND CURRENT THEME
     ===================================== */
 
-    const theme =
-        getTheme(
-            hour24,
-            minute
-        );
+  const theme =
+    getTheme(
+        hour24,
+        minute,
+        now.getSeconds()
+    );
 
 
     /* =====================================
