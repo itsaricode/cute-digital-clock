@@ -45,7 +45,7 @@ let currentTheme = null;
 
 const themes = {
 
-    /* ☕ BREAKFAST */
+    /* ☕ BREAKFAST — 10:55 */
 
     breakfast: {
 
@@ -60,14 +60,14 @@ const themes = {
             "assets/cats/breakfast.png",
 
         start:
-            6 * 60,
+            10 * 60 + 55,
 
         end:
-            9 * 60 + 29
+            10 * 60 + 55
     },
 
 
-    /* 🧹 CLEANING */
+    /* 🧹 CLEANING — 10:56 */
 
     cleaning: {
 
@@ -82,14 +82,14 @@ const themes = {
             "assets/cats/cleaning.png",
 
         start:
-            9 * 60 + 30,
+            10 * 60 + 56,
 
         end:
-            11 * 60 + 29
+            10 * 60 + 56
     },
 
 
-    /* 📚 STUDY */
+    /* 📚 STUDY — 10:57 */
 
     study: {
 
@@ -104,14 +104,14 @@ const themes = {
             "assets/cats/study.png",
 
         start:
-            11 * 60 + 30,
+            10 * 60 + 57,
 
         end:
-            15 * 60 + 59
+            10 * 60 + 57
     },
 
 
-    /* 📺 TV */
+    /* 📺 TV — 10:58 */
 
     tv: {
 
@@ -126,14 +126,14 @@ const themes = {
             "assets/cats/tv.png",
 
         start:
-            16 * 60,
+            10 * 60 + 58,
 
         end:
-            18 * 60 + 59
+            10 * 60 + 58
     },
 
 
-    /* 🍽️ DINNER */
+    /* 🍽️ DINNER — 10:59 */
 
     dinner: {
 
@@ -148,14 +148,14 @@ const themes = {
             "assets/cats/dinner.png",
 
         start:
-            19 * 60,
+            10 * 60 + 59,
 
         end:
-            21 * 60 + 29
+            10 * 60 + 59
     },
 
 
-    /* 🌙 SLEEPY */
+    /* 🌙 SLEEPY — 11:00 */
 
     sleepy: {
 
@@ -170,14 +170,14 @@ const themes = {
             "assets/cats/sleepy.png",
 
         start:
-            21 * 60 + 30,
+            11 * 60 + 0,
 
         end:
-            23 * 60 + 59
+            11 * 60 + 0
     },
 
 
-    /* 🌙 AFTER MIDNIGHT */
+    /* 🌙 DREAMY NIGHT — 11:01 */
 
     night: {
 
@@ -192,10 +192,10 @@ const themes = {
             "assets/cats/sleepy.png",
 
         start:
-            0,
+            11 * 60 + 1,
 
         end:
-            5 * 60 + 59
+            11 * 60 + 1
     }
 
 };
