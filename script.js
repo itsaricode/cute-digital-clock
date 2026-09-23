@@ -243,46 +243,165 @@ function getTheme(hour, minute) {
     };
 }
 
-
 /* =========================================
-   PLAY TWINNG SOUND
+   CREATE CUTE TWINNG SOUND WITH JAVASCRIPT
 ========================================= */
+
+let audioContext = null;
+
 
 function playThemeSound() {
 
-    /* Sound OFF? Stop here. */
-
     if (!soundEnabled) {
-
         return;
     }
 
 
-    /* Start sound from beginning */
+    /* Create AudioContext */
 
-    themeSound.currentTime = 0;
+    if (!audioContext) {
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
 
 
-    /*
-       Play the cute TWINNG sound.
+    /* Resume audio if browser paused it */
 
-       Some browsers block automatic
-       audio until the user interacts
-       with the page, so we safely catch
-       that situation.
-    */
+    if (
+        audioContext.state === "suspended"
+    ) {
 
-    themeSound
-        .play()
-        .catch(() => {
+        audioContext.resume();
+    }
 
-            console.log(
-                "Sound will play after user interaction."
-            );
 
-        });
+    /* =====================================
+       FIRST TONE
+    ===================================== */
+
+    const oscillator1 =
+        audioContext.createOscillator();
+
+
+    const gain1 =
+        audioContext.createGain();
+
+
+    oscillator1.type =
+        "sine";
+
+
+    oscillator1.frequency.setValueAtTime(
+        700,
+        audioContext.currentTime
+    );
+
+
+    oscillator1.frequency.exponentialRampToValueAtTime(
+        1100,
+        audioContext.currentTime + 0.12
+    );
+
+
+    gain1.gain.setValueAtTime(
+        0.0001,
+        audioContext.currentTime
+    );
+
+
+    gain1.gain.exponentialRampToValueAtTime(
+        0.35,
+        audioContext.currentTime + 0.02
+    );
+
+
+    gain1.gain.exponentialRampToValueAtTime(
+        0.0001,
+        audioContext.currentTime + 0.25
+    );
+
+
+    oscillator1.connect(gain1);
+
+    gain1.connect(
+        audioContext.destination
+    );
+
+
+    oscillator1.start();
+
+    oscillator1.stop(
+        audioContext.currentTime + 0.25
+    );
+
+
+    /* =====================================
+       SECOND LITTLE TWINNG
+    ===================================== */
+
+    const oscillator2 =
+        audioContext.createOscillator();
+
+
+    const gain2 =
+        audioContext.createGain();
+
+
+    oscillator2.type =
+        "sine";
+
+
+    oscillator2.frequency.setValueAtTime(
+        1100,
+        audioContext.currentTime + 0.08
+    );
+
+
+    oscillator2.frequency.exponentialRampToValueAtTime(
+        1500,
+        audioContext.currentTime + 0.18
+    );
+
+
+    gain2.gain.setValueAtTime(
+        0.0001,
+        audioContext.currentTime + 0.08
+    );
+
+
+    gain2.gain.exponentialRampToValueAtTime(
+        0.25,
+        audioContext.currentTime + 0.10
+    );
+
+
+    gain2.gain.exponentialRampToValueAtTime(
+        0.0001,
+        audioContext.currentTime + 0.30
+    );
+
+
+    oscillator2.connect(gain2);
+
+    gain2.connect(
+        audioContext.destination
+    );
+
+
+    oscillator2.start(
+        audioContext.currentTime + 0.08
+    );
+
+
+    oscillator2.stop(
+        audioContext.currentTime + 0.30
+    );
 }
-
 
 /* =========================================
    CHANGE THEME
