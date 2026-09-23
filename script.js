@@ -100,7 +100,7 @@ const themes = {
         className: "theme-tv",
 
         background:
-            "assets/backgrounds/tv.png",
+            "assets/backgrounds/green.png",
 
         cat:
             "assets/cats/tv.png",
