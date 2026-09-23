@@ -60,10 +60,10 @@ const themes = {
             "assets/cats/breakfast.png",
 
         start:
-            10 * 60 + 55,
+            11 * 60 + 48,
 
         end:
-            10 * 60 + 55
+            11 * 60 + 48
     },
 
 
@@ -82,10 +82,10 @@ const themes = {
             "assets/cats/cleaning.png",
 
         start:
-            10 * 60 + 56,
+            11 * 60 + 49,
 
         end:
-            10 * 60 + 56
+            11 * 60 + 49
     },
 
 
@@ -104,10 +104,10 @@ const themes = {
             "assets/cats/study.png",
 
         start:
-            10 * 60 + 57,
+            11 * 60 + 50,
 
         end:
-            10 * 60 + 57
+            11 * 60 + 50
     },
 
 
@@ -126,10 +126,10 @@ const themes = {
             "assets/cats/tv.png",
 
         start:
-            10 * 60 + 58,
+            11 * 60 + 51,
 
         end:
-            10 * 60 + 58
+            11 * 60 + 51
     },
 
 
