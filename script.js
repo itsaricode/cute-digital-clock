@@ -170,10 +170,10 @@ const themes = {
             "assets/cats/sleepy.png",
 
         start:
-            11 * 60 + 0,
+            10 * 60 + 0,
 
         end:
-            11 * 60 + 0
+            10 * 60 + 0
     },
 
 
@@ -192,10 +192,10 @@ const themes = {
             "assets/cats/sleepy.png",
 
         start:
-            11 * 60 + 1,
+            10 * 60 + 1,
 
         end:
-            11 * 60 + 1
+            10 * 60 + 1
     }
 
 };
