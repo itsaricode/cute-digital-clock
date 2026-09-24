@@ -40,11 +40,13 @@ let currentTheme = null;
 
 
 /* =========================================
-   🎬 VIDEO TEST — 30 SECONDS EACH
-   START: 8:45 PM
+   OUR THEMES
+   ORIGINAL / REAL-TIME TIMINGS
 ========================================= */
 
 const themes = {
+
+    /* ☕ BREAKFAST — 06:00 AM to 09:29 AM */
 
     breakfast: {
 
@@ -57,10 +59,12 @@ const themes = {
         cat:
             "assets/cats/breakfast.png",
 
-        start: 20 * 3600 + 45 * 60,
-        end:   20 * 3600 + 45 * 60 + 29
+        start: 6 * 3600,
+        end:   9 * 3600 + 29 * 60 + 59
     },
 
+
+    /* 🧹 CLEANING — 09:30 AM to 11:29 AM */
 
     cleaning: {
 
@@ -73,10 +77,12 @@ const themes = {
         cat:
             "assets/cats/cleaning.png",
 
-        start: 20 * 3600 + 45 * 60 + 30,
-        end:   20 * 3600 + 45 * 60 + 59
+        start: 9 * 3600 + 30 * 60,
+        end:   11 * 3600 + 29 * 60 + 59
     },
 
+
+    /* 📚 STUDY — 11:30 AM to 03:59 PM */
 
     study: {
 
@@ -89,10 +95,12 @@ const themes = {
         cat:
             "assets/cats/study.png",
 
-        start: 20 * 3600 + 46 * 60,
-        end:   20 * 3600 + 46 * 60 + 29
+        start: 11 * 3600 + 30 * 60,
+        end:   15 * 3600 + 59 * 60 + 59
     },
 
+
+    /* 📺 TV — 04:00 PM to 06:59 PM */
 
     tv: {
 
@@ -105,10 +113,12 @@ const themes = {
         cat:
             "assets/cats/tv.png",
 
-        start: 20 * 3600 + 46 * 60 + 30,
-        end:   20 * 3600 + 46 * 60 + 59
+        start: 16 * 3600,
+        end:   18 * 3600 + 59 * 60 + 59
     },
 
+
+    /* 🍽️ DINNER — 07:00 PM to 09:29 PM */
 
     dinner: {
 
@@ -121,10 +131,12 @@ const themes = {
         cat:
             "assets/cats/dinner.png",
 
-        start: 20 * 3600 + 47 * 60,
-        end:   20 * 3600 + 47 * 60 + 29
+        start: 19 * 3600,
+        end:   21 * 3600 + 29 * 60 + 59
     },
 
+
+    /* 🌙 SLEEPY — 09:30 PM to 11:59 PM */
 
     sleepy: {
 
@@ -137,10 +149,12 @@ const themes = {
         cat:
             "assets/cats/sleepy.png",
 
-        start: 20 * 3600 + 47 * 60 + 30,
-        end:   20 * 3600 + 47 * 60 + 59
+        start: 21 * 3600 + 30 * 60,
+        end:   23 * 3600 + 59 * 60 + 59
     },
 
+
+    /* 🌙 DREAMY NIGHT — 12:00 AM to 05:59 AM */
 
     night: {
 
@@ -153,22 +167,22 @@ const themes = {
         cat:
             "assets/cats/sleepy.png",
 
-        start: 20 * 3600 + 48 * 60,
-        end:   20 * 3600 + 48 * 60 + 29
+        start: 0,
+        end:   5 * 3600 + 59 * 60 + 59
     }
 
 };
 
 
 /* =========================================
-   FIND THEME FROM CURRENT TIME
-========================================= */
-function getTheme(hour, minute, second) {
+     FIND THEME FROM CURRENT TIME
+ ========================================= */
+
+function getTheme(hour, minute) {
 
     const totalSeconds =
         hour * 3600 +
-        minute * 60 +
-        second;
+        minute * 60;
 
 
     for (
@@ -526,8 +540,8 @@ function updateClock() {
   const theme =
     getTheme(
         hour24,
-        minute,
-        now.getSeconds()
+        minute
+        
     );
 
 
