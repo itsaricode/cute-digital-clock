@@ -108,7 +108,7 @@ const themes = {
         className: "theme-tv",
 
         background:
-            "assets/backgrounds/green.png",
+            "assets/backgrounds/tv.png",
 
         cat:
             "assets/cats/tv.png",
